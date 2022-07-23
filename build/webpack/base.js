@@ -1,13 +1,18 @@
 // shared config (dev and prod)
-const { resolve } = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ENTRY_PATH = path.resolve(__dirname, '../../src/index.tsx');
+const ENTRY_HTML_PATH = path.resolve(__dirname, '../../src/index.html');
 
 module.exports = {
-  entry: './index.tsx',
+  entry: ENTRY_PATH,
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
-  context: resolve(__dirname, '../../src'),
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
   module: {
     rules: [
       {
@@ -32,5 +37,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({ template: 'index.html' })]
+  plugins: [new HtmlWebpackPlugin({ template: ENTRY_HTML_PATH })]
 };
