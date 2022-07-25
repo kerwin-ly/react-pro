@@ -3,25 +3,23 @@
 module.exports = {
   settings: {
     react: {
-      version: 'detect',
-    },
+      version: 'detect'
+    }
   },
   root: true,
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es6: true
   },
-  /* 指定如何解析语法 */
   parser: '@typescript-eslint/parser',
-  /* 优先级低于 parse 的语法解析配置 */
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
     jsxPragma: 'React',
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   plugins: ['react', '@typescript-eslint', 'react-hooks', 'prettier'],
   /* 继承某些已有的规则 */
@@ -32,7 +30,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'prettier',
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended'
   ],
   /*
    * "off" 或 0    ==>  关闭规则
@@ -46,7 +44,6 @@ module.exports = {
     'no-use-before-define': 'off', // 禁止在 函数/类/变量 定义之前使用它们
     'prefer-const': 'off', // 此规则旨在标记使用 let 关键字声明但在初始分配后从未重新分配的变量，要求使用 const
     'no-irregular-whitespace': 'off', // 禁止不规则的空白
-
     // typeScript (https://typescript-eslint.io/rules)
     '@typescript-eslint/no-unused-vars': 'error', // 禁止定义未使用的变量
     '@typescript-eslint/no-inferrable-types': 'off', // 可以轻松推断的显式类型可能会增加不必要的冗长
@@ -61,9 +58,8 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off', // 禁止 @ts-<directive> 使用注释或要求在指令后进行描述
     '@typescript-eslint/no-non-null-assertion': 'off', // 不允许使用后缀运算符的非空断言(!)
     '@typescript-eslint/explicit-module-boundary-types': 'off', // 要求导出函数和类的公共类方法的显式返回和参数类型
-
     // react (https://github.com/jsx-eslint/eslint-plugin-react)
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'off',
-  },
+    'react-hooks/exhaustive-deps': 'off'
+  }
 };

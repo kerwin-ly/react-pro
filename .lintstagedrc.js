@@ -1,6 +1,7 @@
 module.exports = {
-  '*.{js,ts,vue}': 'eslint',
-  // ".{js,ts,vue}": "eslint --fix", // you can use this instead. autofixes lint issues if possible. commit will fail only if lint error/warning has to be fixed manually
-  // ".{js,ts,vue}": "eslint --fix --max-warnings 0",  // prevent comitting if there's even one warning + autofix
-  '*.{vue,less}': 'stylelint'
+	"*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+	"{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": ["prettier --write--parser json"],
+	"package.json": ["prettier --write"],
+	"*.{scss,less,styl}": ["stylelint --fix", "prettier --write"],
+	"*.md": ["prettier --write"]
 };
