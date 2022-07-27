@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ConfigProvider } from 'antd';
-// import { connect } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
-// import AuthRouter from '@/routers/utils/authRouter';
 import Router from '@/routers';
 import zhCN from 'antd/lib/locale/zh_CN';
 import enUS from 'antd/lib/locale/en_US';
@@ -25,9 +23,7 @@ const App = (props: any) => {
   return (
     <HashRouter>
       <ConfigProvider locale={i18nLocale} componentSize={props.assemblySize}>
-        {/* <AuthRouter> */}
         <Router />
-        {/* </AuthRouter> */}
       </ConfigProvider>
     </HashRouter>
   );

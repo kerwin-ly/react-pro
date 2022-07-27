@@ -65,14 +65,14 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
     // build configure
     build: {
       outDir: 'dist',
-      minify: 'esbuild',
-      // minify: "terser",
-      // terserOptions: {
-      // 	compress: {
-      // 		drop_console: viteEnv.VITE_DROP_CONSOLE,
-      // 		drop_debugger: true
-      // 	}
-      // },
+      // minify: 'esbuild',
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: viteEnv.VITE_DROP_CONSOLE,
+          drop_debugger: true
+        }
+      },
       rollupOptions: {
         output: {
           // Static resource classification and packaging

@@ -1,6 +1,6 @@
+import Login from '@/views/system/login';
 import { Navigate, useRoutes } from 'react-router-dom';
 import { RouteInfo } from './typings';
-import Login from '@/views/login/index';
 
 export const rootRouter: RouteInfo[] = [
   {
